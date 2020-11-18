@@ -30,3 +30,10 @@ console.log("Should be true >", result);
   let result = extractStr.match(codingRegex);
   console.log("Should be coding... >", result);
 }
+
+{
+  let twinkleStar = "Twinkle, twinkle, little star";
+  let starRegex = /twinkle/gi; // Change this line
+  let result = twinkleStar.match(starRegex); // Change this line
+  console.log("Should be [ 'Twinkle', 'twinkle' ] >", result);
+}
