@@ -115,3 +115,13 @@ const regexCriminals = /C+/g;
 const peopleString = "sdafcasCCCfdsCCdASDFCVBCC";
 const criminals = peopleString.match(regexCriminals);
 console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
+
+// Match beginning string patterns
+// Use caret (^) outside of char set ([])
+// Caret inside is for negation > [^abc]
+{
+  let rickyAndCal = "Cal and Ricky both like racing.";
+  let calRegex = /^Cal/; // Change this line
+  let result = calRegex.test(rickyAndCal);
+  console.log("Should be true >", result);
+}
