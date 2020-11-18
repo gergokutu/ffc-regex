@@ -150,3 +150,11 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
   let result = quoteSample.match(nonAlphabetRegex).length;
   console.log("Should be 6 >", result);
 }
+
+// [0-9] > \d
+{
+  let movieName = "2001: A Space Odyssey";
+  let numRegex = /\d/g; // Change this line
+  let result = movieName.match(numRegex).length;
+  console.log("Should be 4 >", result);
+}
