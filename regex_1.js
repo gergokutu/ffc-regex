@@ -16,3 +16,10 @@ console.log("Should be true >", result);
   let result = petRegex.test(petString);
   console.log("Should be true >", result);
 }
+
+{
+  let myString = "freeCodeCamp";
+  let fccRegex = /freecodecamp/i; // Change this line
+  let result = fccRegex.test(myString);
+  console.log("Should be true >", result);
+}
