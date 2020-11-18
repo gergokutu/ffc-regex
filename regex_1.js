@@ -33,7 +33,14 @@ console.log("Should be true >", result);
 
 {
   let twinkleStar = "Twinkle, twinkle, little star";
-  let starRegex = /twinkle/gi; // Change this line
-  let result = twinkleStar.match(starRegex); // Change this line
+  let starRegex = /twinkle/gi;
+  let result = twinkleStar.match(starRegex);
   console.log("Should be [ 'Twinkle', 'twinkle' ] >", result);
+}
+
+{
+  let exampleStr = "Let's have fun with regular expressions!";
+  let unRegex = /.un/;
+  let result = unRegex.test(exampleStr);
+  console.log("Should be true >", result);
 }
