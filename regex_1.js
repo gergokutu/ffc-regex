@@ -74,3 +74,11 @@ console.log("Should be true >", result);
   let result = quoteSample.match(myRegex);
   console.log("Negated:", result);
 }
+
+// Once or more times in sequence
+{
+  let difficultSpelling = "Mississippi";
+  let myRegex = /s+/gi; // Change this line
+  let result = difficultSpelling.match(myRegex);
+  console.log("Should be [ 'ss', 'ss' ] >", result);
+}
