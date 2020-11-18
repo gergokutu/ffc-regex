@@ -59,3 +59,10 @@ console.log("Should be true >", result);
   let result = quoteSample.match(alphabetRegex);
   console.log("Match result for all letter characters:", result);
 }
+
+{
+  let quoteSample = "Blueberry 3.141592653s are delicious.";
+  let myRegex = /[h-s2-6]/gi;
+  let result = quoteSample.match(myRegex);
+  console.log("Match result for all letters h through s & numbers 2 through 6:", result);
+}
