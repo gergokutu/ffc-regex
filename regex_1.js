@@ -100,7 +100,7 @@ console.log("Should be true >", result);
 
 // Lazy vs greedy mathing
 // Default is greedy > longest possible substring
-// Use ? (at the end!!!) for lazy matching > shortest possible substring
+// Use ? (after the quantifier) for lazy matching > shortest possible substring
 {
   let text = "<h1>Winter is coming</h1>";
   let myRegex1 = /<.*>/;
