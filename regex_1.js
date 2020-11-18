@@ -1,8 +1,10 @@
+// Exact match
 let myString = "Hello, World!";
 let myRegex = /Hello/;
 let result = myRegex.test(myString);
 console.log("Should be true >", result);
 
+// Check with test()
 {
   let waldoIsHiding = "Somewhere Waldo is hiding in this text.";
   let waldoRegex = /Waldo/;
@@ -10,6 +12,7 @@ console.log("Should be true >", result);
   console.log("Should be true >", result);
 }
 
+// Alternatives with |
 {
   let petString = "James has a pet cat.";
   let petRegex = /dog|cat|bird|fish/;
@@ -17,6 +20,7 @@ console.log("Should be true >", result);
   console.log("Should be true >", result);
 }
 
+// Case insensitivity
 {
   let myString = "freeCodeCamp";
   let fccRegex = /freecodecamp/i;
@@ -24,6 +28,7 @@ console.log("Should be true >", result);
   console.log("Should be true >", result);
 }
 
+// Extract with mach()
 {
   let extractStr = "Extract the word 'coding' from this string.";
   let codingRegex = /coding/;
@@ -31,6 +36,7 @@ console.log("Should be true >", result);
   console.log("Should be coding... >", result);
 }
 
+// Do not stop at the first match > global flag 'g'
 {
   let twinkleStar = "Twinkle, twinkle, little star";
   let starRegex = /twinkle/gi;
@@ -38,6 +44,7 @@ console.log("Should be true >", result);
   console.log("Should be [ 'Twinkle', 'twinkle' ] >", result);
 }
 
+// Wildcard dot (.)
 {
   let exampleStr = "Let's have fun with regular expressions!";
   let unRegex = /.un/;
@@ -102,3 +109,9 @@ console.log("Should be true >", result);
   let result2 = text.match(myRegex2);
   console.log(`Greedy: ${result1}\nLazy: ${result2}`);
 }
+
+// Find criminals > C
+const regexCriminals = /C+/g;
+const peopleString = "sdafcasCCCfdsCCdASDFCVBCC";
+const criminals = peopleString.match(regexCriminals);
+console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
