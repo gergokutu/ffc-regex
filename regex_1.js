@@ -100,7 +100,7 @@ console.log("Should be true >", result);
 
 // Lazy vs greedy mathing
 // Default is greedy > longest possible substring
-// Use ? for lazy matching > shortest possible substring
+// Use ? (at the end!!!) for lazy matching > shortest possible substring
 {
   let text = "<h1>Winter is coming</h1>";
   let myRegex1 = /<.*>/;
@@ -203,3 +203,38 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
   let result = sample.match(countWhiteSpace).length;
   console.log("Should be 38 >", result);
 }
+
+// Quantity specifiers > {}
+// Interval
+{
+  let ohStr = "Ohhh no";
+  let ohRegex = /Oh{3,6}\sno/; // Change this line
+  let result = ohRegex.test(ohStr);
+  console.log("Should be true >", result);
+}
+
+// Min number
+{
+  let haStr = "Hazzzzah";
+  let haRegex = /Haz{4,}ah/; // Change this line
+  let result = haRegex.test(haStr);
+  console.log("Should be true >", result);
+}
+
+// Exact number
+{
+  let haStr = "Hazzzzah";
+  let haRegex = /Haz{3}ah/; // Change this line
+  let result = haRegex.test(haStr);
+  console.log("Should be false >", result);
+}
+
+// Max number
+{
+  let haStr = "Hazzzah";
+  let haRegex = /Haz{0,3}ah/; // Change this line
+  let result = haRegex.test(haStr);
+  console.log("Should be false >", result);
+}
+
+
