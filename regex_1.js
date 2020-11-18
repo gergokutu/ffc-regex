@@ -158,3 +158,11 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
   let result = movieName.match(numRegex).length;
   console.log("Should be 4 >", result);
 }
+
+// [^0-9] > \D
+{
+  let movieName = "2001: A Space Odyssey";
+  let noNumRegex = /\D/g; // Change this line
+  let result = movieName.match(noNumRegex).length;
+  console.log("Should be 17 >", result);
+}
