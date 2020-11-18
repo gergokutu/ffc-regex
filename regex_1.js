@@ -248,12 +248,12 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
 // Lookaheads > positive, negative
 // Checks the pattern but won't mach it
 // Check two or more patterns in one string. 
-// Password checker that looks for
-// 1. between 3 and 6 characters
-// 2. and at least 1 number
+// Password checker:
+// 1. length is between 3 and 6 alphanumerical characters
+// 2. and contains at least 1 number
 {
-  let password = "abc123";
-  let checkPass = /(?=\w{3,6})(?=\D*\d)/;
+  let password = "a1bcas";
+  let checkPass = /^(?=\w{3,6}$)(?=\D*\d)/;
   let result = checkPass.test(password);
-  console.log("Valid password hould be true >", result);
+  console.log("Valid password should be true >", result);
 } 
