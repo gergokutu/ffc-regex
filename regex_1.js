@@ -185,3 +185,21 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
   let result2 = userCheck2.test(username);
   console.log("Should be true >", result2);
 }
+
+// Match whitespace > \s equal to the [ \r\t\f\n\v]
+// Count multiple whitespaces
+{
+  let sample = "Whitespace is important in separating words";
+  let countWhiteSpace = /\s/g;
+  let result = sample.match(countWhiteSpace).length;
+  console.log("Should be 5 >", result);
+}
+
+// Match whitespace > \s equal to the [ \r\t\f\n\v]
+// Count multiple whitespaces
+{
+  let sample = "Whitespace is important in separating words";
+  let countWhiteSpace = /\S/g;
+  let result = sample.match(countWhiteSpace).length;
+  console.log("Should be 38 >", result);
+}
