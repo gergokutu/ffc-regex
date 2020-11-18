@@ -247,6 +247,14 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
 
 // Lookaheads > positive, negative
 // Checks the pattern but won't mach it
+{
+  let quit = "qu";
+  let noquit = "qt";
+  let quRegex = /q(?=u)/;
+  let qRegex = /q(?!u)/;
+  quit.match(quRegex); // Returns ["q"]
+  noquit.match(qRegex); // Returns ["q"]
+}
 // Check two or more patterns in one string. 
 // Password checker:
 // 1. length is between 3 and 6 alphanumerical characters
@@ -256,4 +264,15 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
   let checkPass = /^(?=\w{3,6}$)(?=\D*\d)/;
   let result = checkPass.test(password);
   console.log("Valid password should be true >", result);
-} 
+}
+
+// Other password checker:
+// 1. greater than 5 characters long
+// 2. do not begin with numbers
+// 3. and have two consecutive digits.
+{
+  let sampleWord = "a22st";
+  let pwRegex = /^\D(?=\w{4,})(?=\w*\d{2})/; // Change this line
+  let result = pwRegex.test(sampleWord);
+  console.log("Valid password should be true >", result);
+}
