@@ -166,3 +166,22 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
   let result = movieName.match(noNumRegex).length;
   console.log("Should be 17 >", result);
 }
+
+// Restrict possible usernames!
+// 1) Usernames can only use alpha - numeric characters.
+// 2) The only numbers in the username have to be at the end.
+// There can be zero or more of them at the end. Username cannot start with the number.
+// 3) Username letters can be lowercase and uppercase.
+// 4) Usernames have to be at least two characters long.
+// A two - character username can only use alphabet letters as characters.
+{
+  let username = "JackOfAllTrades";
+  let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i;
+  let result = userCheck.test(username);
+  console.log("Should be true >", result);
+  // ver2
+  // {2,} > at least 2 of the preceding character
+  let userCheck2 = /^[a-z]([0-9]{2,}|[a-z]+\d*)$/i;
+  let result2 = userCheck2.test(username);
+  console.log("Should be true >", result2);
+}
