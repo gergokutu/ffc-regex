@@ -121,7 +121,24 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
 // Caret inside is for negation > [^abc]
 {
   let rickyAndCal = "Cal and Ricky both like racing.";
-  let calRegex = /^Cal/; // Change this line
+  let calRegex = /^Cal/;
   let result = calRegex.test(rickyAndCal);
   console.log("Should be true >", result);
+}
+
+// Match Ending String Patterns ($)
+{
+  let caboose = "The last car on a train is the caboose";
+  let lastRegex = /caboose$/;
+  let result = lastRegex.test(caboose);
+  console.log("Should be true >", result);
+}
+
+// Shorthand for char set [a-zA-Z0-9_] > \w
+// Count alphanumeric characters
+{
+  let quoteSample = "The five boxing wizards jump quickly.";
+  let alphabetRegexV2 = /\w/g;
+  let result = quoteSample.match(alphabetRegexV2).length;
+  console.log("Should be 31 >", result);
 }
