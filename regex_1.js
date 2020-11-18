@@ -66,3 +66,11 @@ console.log("Should be true >", result);
   let result = quoteSample.match(myRegex);
   console.log("Match result for all letters h through s & numbers 2 through 6:", result);
 }
+
+// Negate char set with caret (^)
+{
+  let quoteSample = "3 blind mice.";
+  let myRegex = /[^aeiou0-9]/gi;
+  let result = quoteSample.match(myRegex);
+  console.log("Negated:", result);
+}
