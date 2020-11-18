@@ -82,3 +82,11 @@ console.log("Should be true >", result);
   let result = difficultSpelling.match(myRegex);
   console.log("Should be [ 'ss', 'ss' ] >", result);
 }
+
+// Zero or more times
+{
+  let chewieQuote = "Aaarrgh";
+  let chewieRegex = /Aa*/;
+  let result = chewieQuote.match(chewieRegex);
+  console.log("Should be [ 'Aaa' ] >", result);
+}
