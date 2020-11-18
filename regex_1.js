@@ -234,7 +234,13 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
   let haStr = "Hazzzah";
   let haRegex = /Haz{0,3}ah/; // Change this line
   let result = haRegex.test(haStr);
-  console.log("Should be false >", result);
+  console.log("Should be true >", result);
 }
 
-
+// Optional char > ? (but NOT at the end!!!)
+{
+  let favWord = "favorite";
+  let favRegex = /favou?rite/i; // Change this line
+  let result = favRegex.test(favWord);
+  console.log("Should be true >", result);
+}
