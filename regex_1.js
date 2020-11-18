@@ -78,7 +78,7 @@ console.log("Should be true >", result);
 // Once or more times in sequence
 {
   let difficultSpelling = "Mississippi";
-  let myRegex = /s+/gi; // Change this line
+  let myRegex = /s+/gi;
   let result = difficultSpelling.match(myRegex);
   console.log("Should be [ 'ss', 'ss' ] >", result);
 }
@@ -89,4 +89,16 @@ console.log("Should be true >", result);
   let chewieRegex = /Aa*/;
   let result = chewieQuote.match(chewieRegex);
   console.log("Should be [ 'Aaa' ] >", result);
+}
+
+// Lazy vs greedy mathing
+// Default is greedy > longest possible substring
+// Use ? for lazy matching > shortest possible substring
+{
+  let text = "<h1>Winter is coming</h1>";
+  let myRegex1 = /<.*>/;
+  let myRegex2 = /<.*?>/;
+  let result1 = text.match(myRegex1);
+  let result2 = text.match(myRegex2);
+  console.log(`Greedy: ${result1}\nLazy: ${result2}`);
 }
