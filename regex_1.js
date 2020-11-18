@@ -244,3 +244,16 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
   let result = favRegex.test(favWord);
   console.log("Should be true >", result);
 }
+
+// Lookaheads > positive, negative
+// Checks the pattern but won't mach it
+// Check two or more patterns in one string. 
+// Password checker that looks for
+// 1. between 3 and 6 characters
+// 2. and at least 1 number
+{
+  let password = "abc123";
+  let checkPass = /(?=\w{3,6})(?=\D*\d)/;
+  let result = checkPass.test(password);
+  console.log("Valid password hould be true >", result);
+} 
