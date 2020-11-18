@@ -134,11 +134,19 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
   console.log("Should be true >", result);
 }
 
-// Shorthand for char set [a-zA-Z0-9_] > \w
+// Shorthand for char set [A-Za-z0-9_] > \w
 // Count alphanumeric characters
 {
   let quoteSample = "The five boxing wizards jump quickly.";
   let alphabetRegexV2 = /\w/g;
   let result = quoteSample.match(alphabetRegexV2).length;
   console.log("Should be 31 >", result);
+}
+
+// [^A-Za-z0-9_] > \W
+{
+  let quoteSample = "The five boxing wizards jump quickly.";
+  let nonAlphabetRegex = /\W/g; // Change this line
+  let result = quoteSample.match(nonAlphabetRegex).length;
+  console.log("Should be 6 >", result);
 }
