@@ -146,7 +146,7 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
 // [^A-Za-z0-9_] > \W
 {
   let quoteSample = "The five boxing wizards jump quickly.";
-  let nonAlphabetRegex = /\W/g; // Change this line
+  let nonAlphabetRegex = /\W/g;
   let result = quoteSample.match(nonAlphabetRegex).length;
   console.log("Should be 6 >", result);
 }
@@ -154,7 +154,7 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
 // [0-9] > \d
 {
   let movieName = "2001: A Space Odyssey";
-  let numRegex = /\d/g; // Change this line
+  let numRegex = /\d/g;
   let result = movieName.match(numRegex).length;
   console.log("Should be 4 >", result);
 }
@@ -162,7 +162,7 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
 // [^0-9] > \D
 {
   let movieName = "2001: A Space Odyssey";
-  let noNumRegex = /\D/g; // Change this line
+  let noNumRegex = /\D/g;
   let result = movieName.match(noNumRegex).length;
   console.log("Should be 17 >", result);
 }
@@ -208,7 +208,7 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
 // Interval
 {
   let ohStr = "Ohhh no";
-  let ohRegex = /Oh{3,6}\sno/; // Change this line
+  let ohRegex = /Oh{3,6}\sno/;
   let result = ohRegex.test(ohStr);
   console.log("Should be true >", result);
 }
@@ -216,7 +216,7 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
 // Min number
 {
   let haStr = "Hazzzzah";
-  let haRegex = /Haz{4,}ah/; // Change this line
+  let haRegex = /Haz{4,}ah/;
   let result = haRegex.test(haStr);
   console.log("Should be true >", result);
 }
@@ -224,7 +224,7 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
 // Exact number
 {
   let haStr = "Hazzzzah";
-  let haRegex = /Haz{3}ah/; // Change this line
+  let haRegex = /Haz{3}ah/;
   let result = haRegex.test(haStr);
   console.log("Should be false >", result);
 }
@@ -232,7 +232,7 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
 // Max number
 {
   let haStr = "Hazzzah";
-  let haRegex = /Haz{0,3}ah/; // Change this line
+  let haRegex = /Haz{0,3}ah/;
   let result = haRegex.test(haStr);
   console.log("Should be true >", result);
 }
@@ -240,7 +240,7 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
 // Optional char > ? (but NOT at the end!!!)
 {
   let favWord = "favorite";
-  let favRegex = /favou?rite/i; // Change this line
+  let favRegex = /favou?rite/i;
   let result = favRegex.test(favWord);
   console.log("Should be true >", result);
 }
@@ -300,4 +300,17 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
   let replaceText = "$3 $2 $1"; // $3 refers to capture group 3
   let result = str.replace(fixRegex, replaceText);
   console.log("Should be 'three two one' >", result);
+}
+
+// Remove Whitespace from Start and End
+{
+  let hello = "   Hello, World!  ";
+  // my version
+  let wsRegex = /^(\s+)(.*)(\s+)$/g;
+  let result = hello.replace(wsRegex, "$2");
+  console.log("MY > Should be 'Hello, World!' >", result);
+  // fcc version
+  let wsRegex2 = /^\s+|\s+$/g;
+  let result2 = hello.replace(wsRegex2, "");
+  console.log("FCC > Should be 'Hello, World!' >", result2);
 }
