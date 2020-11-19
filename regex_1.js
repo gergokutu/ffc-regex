@@ -292,3 +292,12 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
   let result = reRegex.test(repeatNum);
   console.log("Should be false >", result);
 }
+
+// Search and replace with capture groups
+{
+  let str = "one two three";
+  let fixRegex = /^(\w+)\s(\w+)\s(\w+)$/gi;
+  let replaceText = "$3 $2 $1"; // $3 refers to capture group 3
+  let result = str.replace(fixRegex, replaceText);
+  console.log("Should be 'three two one' >", result);
+}
