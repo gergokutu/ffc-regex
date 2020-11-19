@@ -272,7 +272,23 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
 // 3. and have two consecutive digits.
 {
   let sampleWord = "a22st";
-  let pwRegex = /^\D(?=\w{4,})(?=\w*\d{2})/; // Change this line
+  let pwRegex = /^\D(?=\w{4,})(?=\w*\d{2})/;
   let result = pwRegex.test(sampleWord);
   console.log("Valid password should be true >", result);
+}
+
+// Grouping
+{
+  let myString = "Eleanor Roosevelt";
+  let myRegex = /(Eleanor|Franklin).*Roosevelt/;
+  let result = myRegex.test(myString);
+  console.log("Should be true >", result);
+}
+
+// Reuse patterns using capture groups
+{
+  let repeatNum = "42 42 42 42";
+  let reRegex = /^(\d+)\s\1\s\1$/;
+  let result = reRegex.test(repeatNum);
+  console.log("Should be false >", result);
 }
