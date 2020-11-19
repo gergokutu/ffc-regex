@@ -271,8 +271,8 @@ console.log("Criminals should be [ 'CCC', 'CC', 'C', 'CC' ] >", criminals);
 // 2. do not begin with numbers
 // 3. and have two consecutive digits.
 {
-  let sampleWord = "a22st";
-  let pwRegex = /^\D(?=\w{4,})(?=\w*\d{2})/;
+  let sampleWord = "a22stw";
+  let pwRegex = /^\D(?=\w{5,})(?=\w*\d{2})/;
   let result = pwRegex.test(sampleWord);
   console.log("Valid password should be true >", result);
 }
